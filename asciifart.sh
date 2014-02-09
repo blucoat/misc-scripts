@@ -11,4 +11,4 @@ while getopts nr opt; do
   esac 
 done 
 
-wget "$url" -O - -q | awk -- "$filter"
+wget "$url" -O - -q | awk -- "$filter" | sed "s/\&amp\;/\&/g;s/\&gt\;/>/g;s/\&lt\;/</g"
