@@ -7,8 +7,7 @@ while getopts nr opt; do
   case $opt in 
     n) filter="/<font [^>]*><pre>/,/<\/pre>/ {if (\$0 ~ /<font [^>]*><pre>/ || \$0 ~ /<\/pre>/) {} else {print;}}" ;;
     r) url="http://www.asciiartfarts.com/random.cgi" ;; 
-    *) echo "unrecognised option -$opt" 
-       exit ;;
+    *) exit ;;
   esac 
 done 
 
